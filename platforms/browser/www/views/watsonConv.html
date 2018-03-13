@@ -1,0 +1,23 @@
+<div id="watson">
+    <h3 style="color: darkgreen; font-size: 30px">Bienvenue dans le gestionnaire d'aide</h3>
+    <div id="messages">
+        <p style="font-size: 20px" ng-repeat="message in messages">{{ message }}</p>
+        <div class="preloader-wrapper small active" ng-show="chatLoading">
+            <div class="spinner-layer spinner-green-only">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div><div class="gap-patch">
+                <div class="circle"></div>
+            </div><div class="circle-clipper right">
+                <div class="circle"></div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div id="watsonDiv">
+        <form id="watsonConversation" ng-submit="chatBot(chatMessage)">
+            <input id="messageWat" type="text" name="message" ng-model="chatMessage" placeholder="Ton message">
+            <button class="waves-effect waves-light btn boutton" type="submit"><i class="large material-icons">send</i></button>
+        </form>
+    </div>
+</div>

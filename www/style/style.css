@@ -1,0 +1,81 @@
+.colonnecenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+.container {
+    height: 100vh;
+}
+
+.accueilbutton {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#content {
+    height: 100vh;
+    background-color: #3CB371;
+}
+
+.boutton {
+    background-color: darkgreen;
+    color: white;
+}
+
+.boutton:active, .boutton:hover {
+    background-color: white;
+    color: darkgreen;
+}
+
+
+#messageWat:hover {
+    border-bottom: 1px solid darkgreen;
+}
+
+#messageWat {
+    font-size: 20px;
+}
+
+.input-field label {
+    color: white;
+}
+
+#password, #email {
+    border-bottom: 1px solid white !important;
+}
+
+.back {
+    color: white;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+}
+
+#watson {
+    width: 100vw;
+    height: 100vh;
+    padding: 20px 20px;
+    background-color: white;
+}
+
+#watsonConversation {
+    display: flex;
+}
+
+#watsonConversation input {
+    margin-right: 20px;
+}
+
+#watsonDiv {
+    position: relative;
+    bottom: 0px;
+}
+
+#messages {
+    position: relative;
+    top: 0px;
+}
