@@ -30,7 +30,7 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 
 // CONFIGURATION API WATSON
 
-var apiUrl = "http://192.168.1.74:8888/medisoft_serv/api.php"; //Adresse IP à changer selon réseau pour connection au fichier php
+var apiUrl = "http://bersetfa.myhostpoint.ch/api.php"; //Adresse IP à changer selon réseau pour connection au fichier php
 
 myApp.controller('controllerhelp', ['$scope', '$http', function ($scope, $http) {
 
