@@ -37,6 +37,7 @@ myApp.controller('controllerhelp', ['$scope', '$http', function ($scope, $http) 
     $scope.chatBotLoaded = false;
     $scope.chatMessage = '';
     $scope.context = "";
+	$scope.location = [];
 
     // Initialisation cercle chargement pas encore actif
     $scope.chatLoading = false;
@@ -52,7 +53,7 @@ myApp.controller('controllerhelp', ['$scope', '$http', function ($scope, $http) 
         $scope.chatMessage = '';
 
         $http.post(apiUrl, { message: message, context: $scope.context }, {headers:{'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'}}).then(function (response) {
-
+            alert(JSON.stringify(response));
             if(response.error){
                 // Erreur si probleme de récupération du message
                 $('#messages').append('<p>Erreur, nous n\'arrivons pas à récupérer le message</p>');
@@ -60,6 +61,13 @@ myApp.controller('controllerhelp', ['$scope', '$http', function ($scope, $http) 
                 // Ajout du message de Watson dans le tableau Message
                 $scope.messages.push('Watson : '+response.data.output.text[0]);
                 $scope.context = response.data.context;
+
+                for (var i = 1; i >= response.data.entities.lenght; i++) {
+                	$scope.location.push(response.data.entities[i].value);
+                }
+
+                console.log($scope.location);
+
 
                 // Fin du chargement donc disparition cercle chargement
                 $scope.chatLoading = false;
